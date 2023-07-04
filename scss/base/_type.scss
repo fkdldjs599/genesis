@@ -1,0 +1,30 @@
+@font-face{
+    font-family: 'genesis-head-office-light';
+    src: url('../../fonts/GenesisSansHeadOffice-Light.eot');
+    src: url('../../fonts/GenesisSansHeadOffice-Light.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/GenesisSansHeadOffice-Light.woff2') format('woff2'),
+         url('../../fonts/GenesisSansHeadOffice-Light.woff') format('woff');
+    font-style: normal;
+    font-weight:300;
+}
+
+@font-face{
+    font-family: 'genesis-head-office';
+    src:url('../../fonts/GenesisSansHeadOffice-Regular.eot');
+    src:url('../../fonts/GenesisSansHeadOffice-Regular?#iefix') format('embedded-opentype'),
+        url('../../fonts/GenesisSansHeadOffice-Regular.woff2') format('woff2'),
+        url('../../fonts/GenesisSansHeadOffice-Regular.woff') format('woff');
+    font-style: normal;
+    font-weight:300;
+}
+
+
+@font-face{
+    font-family: 'genesis-text-office';
+    src: url('../../fonts/GenesisSansTextOffice-Regular.eot');
+    src: url('../../fonts/GenesisSansTextOffice-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../../fonts/GenesisSansTextOffice-Regular.woff2') format('woff2'),
+        url('../../fonts/GenesisSansTextOffice-Regular.woff') format('woff');
+    font-style: normal;
+    font-weight:300;
+}

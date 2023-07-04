@@ -1,0 +1,14 @@
+@import '../scss/base/reset';
+@import '../scss/base/var';
+@import '../scss/base/mixin';
+@import '../scss/base/type';
+@import '../scss/base/preset';
+
+@import '../scss/layout/header';
+@import '../scss/layout/footer';
+
+@import '../scss/page/main';
+
+/*
+_파일명.scss = 언더바 : 컴파일 못하게하는 구문
+*/
