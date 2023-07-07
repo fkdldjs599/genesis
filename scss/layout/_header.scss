@@ -76,10 +76,16 @@
                         background:white;
                     }*/
                 }//search btn
-                .mobile-btn{
+                .bar-wrap{
+                    display: flex;
+                    position: relative;
+                    z-index:100;
+                }
+                .mobile-btn, .mobile-btn-active{
                     width:66px;
                     height:100%;
-                    position:relative;
+                    position:absolute;
+                    z-index: 100;
                     i{
                         width:20px;
                         height:2px;
@@ -95,19 +101,165 @@
                     .line2{
                         top:39px;
                     }
-                    &:hover{
-                        .line1{
-                            top:50%;
-                            transform:rotate(45deg);
-                        }
-                        .line2{
-                            top:50%;
-                            transform:rotate(-45deg);
-                        }
+                }
+                .mobile-btn-active{
+                    display: none;
+                    .line1{
+                        top:50%;
+                        transform:rotate(45deg);
+                    }
+                    .line2{
+                        top:50%;
+                        transform:rotate(-45deg);
                     }
                 }
             }
         }//inner
+        .popup{
+            width:100vw;
+            background:black;
+            position: absolute;
+            top:0px;
+            left:0px;
+            z-index: 99;
+            .popup-wrap{
+                width:80%;
+                margin: 0px auto;
+                padding:30px 0px;
+                text-align: center;
+                .popup-logo{
+                    img{
+                        width:170px;
+                        margin: 0px auto;
+                    }
+                }
+                .popup-search{
+                    width:625px;
+                    height: 67px;
+                    margin: 40px auto 0px;
+                    position: relative;
+                    input{
+                        width: 100%;
+                        height: 100%;
+                        font-size: 32px;
+                        text-align: center;
+                        border-bottom: 1px solid #888;
+                    }
+                    &:after{
+                        content:"";
+                        width: 30px;
+                        height: 30px;
+                        display: inline-block;
+                        background:url('../../images/icon-search.png') no-repeat center center / cover;
+                        position: absolute;
+                        top:50%;
+                        right:20px;
+                        transform: translateY(-50%);
+                    }
+                }
+                .popup-menu{
+                    margin-top:75px;
+                    display:flex;
+                    flex-wrap:wrap;
+                    gap:80px 0px;
+                    .item{
+                        width:25%;
+                        text-align: left;
+                        strong{
+                            font-size:16px;
+                            color:$subColor;
+                            margin-bottom:20px;
+                            display:inline-block;
+                        }
+                        .menu-btn{
+                            display:flex;
+                            position:relative;
+                            width:100%;
+                            padding:30px 30px 20px 30px;
+                            color:$subColor;
+                            display:none;
+                            box-sizing: border-box;
+                            border-top: solid 1px rgba(255,255,255,0.1);
+                            justify-content: space-between;
+                            &:after{
+                                content:"";
+                                display:block;
+                                width:11px;
+                                height:7px;
+                                background:url('../../images/w-ico-arrow-top.png') no-repeat center center / 11px;
+                                transform:rotate(180deg);
+                            }
+                        }
+                        .submenu{
+                            display:flex;
+                            flex-direction: column;
+                            gap:20px;
+                            li{
+                                a{
+                                    display:block;
+                                    color:#bbb;
+                                    font-size:14px;
+                                    transition:250ms;
+                                    &:hover{
+                                        color:$subColor;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .popup-foot{
+                    display: flex;
+                    margin-top: 80px;
+                    border-top: 1px solid #1e1e1e;
+                    .popup-foot-left{
+                        width: 70%;
+                        height: 86px;
+                        display:flex;
+                        gap:20px 50px;
+                        align-items: center;
+                        flex-wrap:wrap;
+                        li{
+                            a{
+                                display:flex;
+                                color:#bbb;
+                                font-size:14px;
+                                &::before{
+                                    content:"";
+                                    display:block;
+                                    width:15px;
+                                    height:15px;
+                                    background:url('../../images/ico-new-window.png') no-repeat center center / 14px;
+                                    margin-right:10px;
+                                    margin-top:-2px;
+                                }
+                            }
+                        }
+                    }
+                    .lang-list{
+                        width: 30%;
+                        display:flex;
+                        align-items: center;
+                        justify-content: flex-end;
+                        a{
+                            display:flex;
+                            width:80px;
+                            height:36px;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                        .eng{
+                            background:#222;
+                            color:$subColor;
+                        }
+                        .kor{
+                            background:$subColor;
+                            color:#222;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     @media (max-width:1358px){
@@ -159,12 +311,71 @@
                         display:none;
                     }
                     .mobile-btn{
+                        position: inherit;
                         .line1{
-                            top:21px;
+                            top:24px;
                         }
                         .line2{
-                            top:32px;
+                            top:35px;
                         }
+                    }
+                    .mobile-btn-active{
+                        position: inherit;
+                    }
+                }
+            }
+            .popup{
+                top: 60px;
+                height: 100vh;
+                background: #111;
+                min-width: 300px;
+                .popup-wrap{
+                    width: 90%;
+                    .popup-logo{
+                        display:none;
+                    }
+                    .popup-search{
+                        width:100%;
+                        height: 33px;
+                        input{
+                            font-size:20px;
+                        }
+                        &:after{
+                            width: 16px;
+                            height:16px;
+                        }
+                    }
+                    .popup-menu{
+                        margin-top: 40px;
+                        gap:10px 0px;
+                        .item{
+                            width: 100%;
+                            padding: 20px 15px 20px 0px;
+                            font-size:14px;
+                            border-bottom: 1px solid #1e1e1e;
+                            box-sizing: border-box;
+                            position: relative;
+                            &:after{
+                                content:"";
+                                display: inline-block;
+                                width:6px;
+                                height: 10px;
+                                background: url('../../images/ico-arrow-white_2.png') no-repeat 100% 100% / cover;
+                                position: absolute;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                right: 0px;
+                            }
+                            strong{
+                                margin-bottom:0px;
+                            }
+                            .submenu{
+                                display: none;
+                            }
+                        }
+                    }
+                    .popup-foot{
+                        display: none;
                     }
                 }
             }

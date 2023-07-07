@@ -1,10 +1,33 @@
 $(document).ready(function(){
 
+    headMenu();
     visualSlide();
     modelSlide();
     awardSlide();
 
 })
+
+function headMenu(){
+    var popup = $('.popup')
+    var btnOpen = $('.mobile-btn')
+    var btnClose = $('.mobile-btn-active')
+
+    popup.slideUp(0)
+
+    btnOpen.on('click', function(){
+        popup.slideDown(500)
+        btnOpen.css({'display' : 'none'})
+        btnClose.css({'display' : 'inline-block'})
+        $('body').css({'max-height' : 1064})
+    })
+
+    btnClose.on('click', function(){
+        popup.slideUp(0)
+        btnClose.css({'display' : 'none'})
+        btnOpen.css({'display' : 'inline-block'})
+    })
+
+}
 
 function visualSlide(){
     var visualList = $('.visual-list')
@@ -103,6 +126,9 @@ function awardSlide(){
     var awardList = $('.award-item-list').children();
     var timer;
     var indexNum = 0;
+
+    var pauseBtn = $('.btn-wrap').children('.pause-btn')
+    var playBtn = $('.btn-wrap').children('.play-btn')
     //console.log(awardList.size())
 
     autoPlay();
@@ -138,4 +164,16 @@ function awardSlide(){
         }
         awardClass();
     }
+    
+    pauseBtn.on('click', function(){
+        clearInterval(timer)
+        pauseBtn.css({'display':'none'})
+        playBtn.css({'display':'inline-block'})
+    })
+
+    playBtn.on('click', function(){
+        autoPlay();
+        playBtn.css({'display':'none'})
+        pauseBtn.css({'display':'inline-block'})
+    })
 }

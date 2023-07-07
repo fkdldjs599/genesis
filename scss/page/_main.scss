@@ -373,6 +373,7 @@
             //비율은 낮은값 나누기 큰값
             }
             .award-list{
+                height: 100%;
                 li{
                     width: 100%;
                     height: 100%;
@@ -384,6 +385,31 @@
                     &.active{
                         opacity: 1;
                     }
+                    .text-box{
+                        width:520px;
+                        position:absolute;
+                        bottom:17%;
+                        left:17%;
+                        word-break: keep-all;
+                        .title{
+                            font-size:42px;
+                            color:$subColor;
+                            margin-bottom:30px;
+                            font-family: $title;
+                            font-weight:300;
+                            line-height:1.5;
+                            span{font-size:30px;
+                                display:block;
+                                margin-top:10px;
+                            }
+                        }
+                        .text{
+                            color:$subColor;
+                            font-size:16px;
+                            line-height:1.8;
+                            letter-spacing:-0.5px;
+                        }
+                    }//text box
                 }
             }
             .award-item{
@@ -444,43 +470,36 @@
                         }
                     }
                 }//award item list
-                .text-box{
-                    width:520px;
+                .btn-wrap{
+                    width: 54px;
+                    height: 54px;
                     position:absolute;
-                    padding-left:338px;
-                    bottom:17%;
-                    left:0px;
-                    .title{
-                        font-size:42px;
-                        color:$subColor;
-                        margin-bottom:30px;
-                        font-family: $title;
-                        font-weight:300;
-                        line-height:1.5;
-                        span{font-size:30px;
-                            display:block;
-                            margin-top:10px;
+                    right: 1%;
+                    bottom: 4%;
+                    .pause-btn{
+                        width:54px;
+                        height:54px;
+                        background:url('../../images/ico-pause-default.png') no-repeat center center / 54px;
+                        border:solid 1px #808080;
+                        border-radius: 50%;
+                        transition:500ms;
+                        position: absolute;
+                        &:hover{
+                            background-image: url('../../images/ico-pause.png');
                         }
                     }
-                    .text{
-                        color:$subColor;
-                        font-size:16px;
-                        line-height:1.8;
-                        letter-spacing:-0.5px;
-                    }
-                }//text box
-                .pause-btn{
-                    width:54px;
-                    height:54px;
-                    background:url('../../images/ico-pause-default.png') no-repeat center center / 54px;
-                    position:absolute;
-                    bottom:0px;
-                    right:70px;
-                    border:solid 1px #808080;
-                    border-radius: 50%;
-                    transition:500ms;
-                    &:hover{
-                        background-image: url('../../images/ico-pause.png');
+                    .play-btn{
+                        width:54px;
+                        height:54px;
+                        background:url('../../images/ico-play-default.png') no-repeat center center / 54px;
+                        border:solid 1px #808080;
+                        border-radius: 50%;
+                        transition:500ms;
+                        position: absolute;
+                        display: none;
+                        &:hover{
+                            background-image: url('../../images/ico-play.png');
+                        }
                     }
                 }
 
@@ -724,7 +743,6 @@
             font-size:16px;
             text-align: left;
             margin-top:60px;
-            background:transparent url('../../images/ico-btn-more-black.png') no-repeat right 18px center / 12px;
             z-index:1;
             &:hover{
                 color:$subColor;
@@ -745,7 +763,25 @@
                 width:100%;
                 opacity:1;
                 transition:width 500ms, opacity 0ms; //채워지는모션
-
+            }
+            span{
+                position: relative;
+                display: inline-block;
+                width: 100%;
+            }
+            span:after{
+                content:"";
+                width: 12px;
+                height: 12px;
+                display: inline-block;
+                background:url('../../images/ico-btn-more-black.png') no-repeat center center / cover;
+                position: absolute;
+                top:50%;
+                right:18px;
+                transform: translateY(-50%);
+            }
+            &:hover span:after{
+                background-image: url('../../images/ico-btn-more-white.png');
             }
         }
     }
@@ -778,6 +814,14 @@
                     .more-link{
                         font-size:16px;
                         color:$mainColor;
+
+                        &:after{
+                            content:"";
+                            display: inline-block;
+                            width: 7px;
+                            height: 11px;
+                            background: url('../../images/ico-arrow-black.png') no-repeat center center / cover;
+                        }
                         span{
                             position:relative;
                             &:before{
@@ -838,9 +882,6 @@
                     .award-item-list{
                         padding-left:250px;
                         padding-right:100px;
-                    }
-                    .pause-btn{
-                        right:30px;
                     }
                 }
             }
@@ -994,19 +1035,21 @@
         padding:0px 50px;
     }
     .award-container{
+        .award-wrapper{
+            height: 650px;
+        }
         >.title{
             padding-left:225px;
             font-size:26px;
             margin-bottom:30px;
         }
-        .award-wrapper{
-            .award-item{
+        .award-list{
+            li{
                 .text-box{
-                    padding-left:225px;
-                    width:270px;
-                    bottom:23%;
+                    width: 260px;
+                    top: 10%;
                     .title{
-                        font-size:21px;
+                        font-size:26px;
                         margin-bottom:0px;
                         span{
                             margin-top:0px;
@@ -1016,6 +1059,10 @@
                         font-size:12px;
                     }
                 }
+            }
+        }
+        .award-wrapper{
+            .award-item{
                 .award-item-list{
                     padding-left:225px;
                     padding-right:70px;
@@ -1122,17 +1169,25 @@
             }
         }
         .award-container{
+            .award-wrapper{
+                height: 550px;
+            }
             >.title{
                 padding-left:100px;
+            }
+            .award-list{
+                li{
+                    .text-box{
+                        width:300px;
+                        left:10%;
+                        bottom: 10%;
+                        }
+                }
             }
             .award-wrapper{
                 width:100%;
                 .award-item{
-                    position: static; //포지션 해제
-                    .text-box{
-                    padding-left:100px;
-                    width:300px;
-                 }
+                    /*position: static;*/ //포지션 해제
                  .award-item-list{
                     padding-left:0px;
                     padding-right:20px;
@@ -1277,21 +1332,22 @@
             }
         }
         .award-container{
-            padding:100px 0px 150px;
+            padding:100px 0px 0px;
+            .award-wrapper{
+                height: auto;
+            }
             >.title{
                 padding-left:30px;
             }
-            .award-wrapper{
-                .award-item{
-                    padding:0px 30px;
-                    overflow:hidden;
-                    box-sizing: border-box;
+            .award-list{
+                li{
                     .text-box{
-                        position:static;
+                        /*position:static;*/
                         width:100%;
-                        padding:0px;
-                        padding-top:50px;
                         box-sizing: border-box;
+                        left:0px;
+                        top: 60%;
+                        padding:0px 30px;
                         .title{
                             font-size:30px;
                             margin-bottom:10px;
@@ -1300,6 +1356,15 @@
                             font-size:16px;
                         }
                     }
+                }
+            }
+            .award-wrapper{
+                height: 800px;
+                .award-item{
+                    padding:0px 30px;
+                    overflow:hidden;
+                    box-sizing: border-box;
+                    justify-content: center;
                     .award-item-list{
                         padding:0px 30px;
                         overflow:hidden;
