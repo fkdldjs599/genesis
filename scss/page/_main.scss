@@ -182,7 +182,7 @@
                     display:block;
                     width:12px;
                     height:12px;
-                    background:url('../../images/w-ico-arrow-top.png') no-repeat center center / 12px;
+                    background:url('../images/w-ico-arrow-top.png') no-repeat center center / 12px;
                     margin-left:auto;
                     transform:rotate(180deg);
                     transition:250ms; 
@@ -496,26 +496,26 @@
                     .pause-btn{
                         width:54px;
                         height:54px;
-                        background:url('../../images/ico-pause-default.png') no-repeat center center / 54px;
+                        background:url('../images/ico-pause-default.png') no-repeat center center / 54px;
                         border:solid 1px #808080;
                         border-radius: 50%;
                         transition:500ms;
                         position: absolute;
                         &:hover{
-                            background-image: url('../../images/ico-pause.png');
+                            background-image: url('../images/ico-pause.png');
                         }
                     }
                     .play-btn{
                         width:54px;
                         height:54px;
-                        background:url('../../images/ico-play-default.png') no-repeat center center / 54px;
+                        background:url('../images/ico-play-default.png') no-repeat center center / 54px;
                         border:solid 1px #808080;
                         border-radius: 50%;
                         transition:500ms;
                         position: absolute;
                         display: none;
                         &:hover{
-                            background-image: url('../../images/ico-play.png');
+                            background-image: url('../images/ico-play.png');
                         }
                     }
                 }
@@ -596,7 +596,7 @@
                             display:block;
                             width:11px;
                             height:11px;
-                            background:url('../../images/ico-arrow-white.png') no-repeat center center / 11px;
+                            background:url('../images/ico-arrow-white.png') no-repeat center center / 11px;
                             transform:rotate(180deg);
                             margin-left:5px;
                         }
@@ -791,14 +791,14 @@
                 width: 12px;
                 height: 12px;
                 display: inline-block;
-                background:url('../../images/ico-btn-more-black.png') no-repeat center center / cover;
+                background:url('../images/ico-btn-more-black.png') no-repeat center center / cover;
                 position: absolute;
                 top:50%;
                 right:18px;
                 transform: translateY(-50%);
             }
             &:hover span:after{
-                background-image: url('../../images/ico-btn-more-white.png');
+                background-image: url('../images/ico-btn-more-white.png');
             }
         }
     }
@@ -837,7 +837,7 @@
                             display: inline-block;
                             width: 7px;
                             height: 11px;
-                            background: url('../../images/ico-arrow-black.png') no-repeat center center / cover;
+                            background: url('../images/ico-arrow-black.png') no-repeat center center / cover;
                         }
                         span{
                             position:relative;
