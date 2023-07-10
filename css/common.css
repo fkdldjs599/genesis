@@ -1047,14 +1047,14 @@ body, html {
   margin-bottom: 90px;
   position: relative;
 }
-.container .model-container .category a {
+.container .model-container .category .cate-main {
   padding: 16px 10px;
   color: #ffffff;
   font-size: 16px;
   display: flex;
   border-bottom: solid 1px #ffffff;
 }
-.container .model-container .category a:after {
+.container .model-container .category .cate-main:after {
   content: "";
   display: block;
   width: 12px;
@@ -1064,8 +1064,25 @@ body, html {
   transform: rotate(180deg);
   transition: 250ms;
 }
-.container .model-container .category a:hover:after {
+.container .model-container .category .cate-main.active:after {
   transform: rotate(0deg);
+}
+.container .model-container .category .category-list {
+  width: 100%;
+  position: absolute;
+  background: #111;
+  top: 100%;
+  left: 0px;
+}
+.container .model-container .category .category-list li {
+  border-bottom: 1px solid #333;
+  padding: 16px 20px;
+}
+.container .model-container .category .category-list li a {
+  color: #757575;
+}
+.container .model-container .category .category-list li:last-child {
+  border-bottom: none;
 }
 .container .model-container .categoryM {
   width: 100%;
@@ -1233,7 +1250,7 @@ body, html {
 }
 .container .award-container .award-wrapper {
   width: 100%;
-  height: 762px;
+  height: 900px;
   position: relative;
 }
 .container .award-container .award-list {
@@ -2111,7 +2128,6 @@ body, html {
   }
   .container .award-container .award-wrapper .award-item .award-item-list {
     padding: 0px 30px;
-    overflow: hidden;
   }
   .container .award-container .award-wrapper .award-item .award-item-list li {
     width: 80%;

@@ -171,7 +171,7 @@
             width:300px;
             margin-bottom:90px;
             position: relative;
-            a{
+            .cate-main{
                 padding:16px 10px;
                 color:$subColor;
                 font-size:16px;
@@ -187,8 +187,25 @@
                     transform:rotate(180deg);
                     transition:250ms; 
                 }
-                &:hover:after{
+                &.active:after{
                     transform:rotate(0deg);
+                }
+            }
+            .category-list{
+                width: 100%;
+                position: absolute;
+                background: #111;
+                top:100%;
+                left:0px;
+                li{
+                    border-bottom: 1px solid #333;
+                    padding:16px 20px;
+                    a{
+                        color:#757575;
+                    }
+                    &:last-child{
+                        border-bottom: none;
+                    }
                 }
             }
         }/*category*/
@@ -367,7 +384,7 @@
         }
         .award-wrapper{
             width:100%;
-            height: 762px;
+            height: 900px;
             position:relative;
             //padding-top:50%; //이미지 넓을자리 패딩으로만듦
             //비율은 낮은값 나누기 큰값
@@ -1367,7 +1384,6 @@
                     justify-content: center;
                     .award-item-list{
                         padding:0px 30px;
-                        overflow:hidden;
                         li{
                             width:80%;
                             flex-shrink:0;
